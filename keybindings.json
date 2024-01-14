@@ -1,0 +1,160 @@
+[
+  // Move to the previous/next editor.
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+
+  {
+    "key": "ctrl+alt+j",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "left"
+    }
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "right"
+    }
+  },
+
+  //Terminal  keys
+  {
+    "key": "n t",
+    "command": "workbench.action.terminal.new",
+    "when": "editorTextFocus && !editorHasSelection && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetVisible"
+  },
+
+  // To focus on terminal and remove focus
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.togglePanel"
+  },
+  //new vs code 
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  // to close vs code 
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  //To move lines up and down
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+
+  // To kill the active tab
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorFocus"
+  },
+
+  // To create folder and files
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus && !inputFocus && explorerResourceIsFolder && !explorerResourceIsRoot"
+  },
+  // Rename a file
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  //to close the tree
+  {
+    "key": "space x",
+    "command": "-workbench.files.action.focusFilesExplorer",
+    "when": "explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "space x",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "!explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "space x",
+    "command": "workbench.action.previousEditor",
+    "when": "explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  //To Open quick fix
+  {
+    "key": "space f",
+    "command": "workbench.action.problems.focus",
+    "when": "editorLangId == 'plaintext' && !inDebugRepl && editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "spcae space",
+    "command": "workbench.action.quickOpen",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+    //
+  // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
+  //
+
+  {
+    // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+k": Selects the previous suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+j": Selects the next item in the Quick Open dialog when it is open.
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    // "ctrl+k": Selects the previous item in the Quick Open dialog when it is open.
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+]

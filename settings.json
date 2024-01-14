@@ -1,0 +1,107 @@
+{
+  "vim.leader": " ",
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "all",
+  "window.zoomLevel": 1,
+  "terminal.integrated.env.windows": {},
+  "console-ninja.featureSet": "Community",
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "vscode-icons",
+  "files.autoSave": "afterDelay",
+  "vim.timeout": 200,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    //jk intead of esc
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>", "l"]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-f>": true,
+    "<C-a>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["v", "n"],
+      "after": ["v", "g", "_", "y"]
+    },
+    {
+      "before": ["f", "d"],
+      "commands": ["typescript.goToSourceDefinition"]
+    },
+    {
+      "before": ["d", "f"],
+      "after": ["g", "d"]
+    },
+    {
+      "before": ["d", "n"],
+      "after": ["d", "g", "_"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["f", "m"],
+      "commands": [
+        {
+          "command": "editor.action.formatDocument",
+          "args": { "source": "prettier" },
+          "when": "editorTextFocus && !editorReadonly"
+        }
+      ]
+    },
+    //Opening the tree
+    {
+      "before": ["<leader>", "e"],
+      "commands": [
+        {
+          "command": "workbench.view.explorer"
+        }
+      ]
+    },
+    //for ease
+    {
+      "before": ["leader", "w"],
+      "commands": [":w!"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    //to move a line up and down
+    {
+      "before": ["<A-j>"],
+      "commands": [
+        {
+          "command": "editor.action.moveLinesUpAction",
+          "when": "editorTextFocus && !editorReadonly"
+        }
+      ]
+    },
+    {
+      "before": ["<A-k>"],
+      "commands": [
+        {
+          "command": "editor.action.moveLinesDownAction",
+          "when": "editorTextFocus && !editorReadonly"
+        }
+      ]
+    }
+  ],
+  //paste
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "background.editorBackgrounds": ["d:/Wallpaper\\(photo\\)/**"]
+}
