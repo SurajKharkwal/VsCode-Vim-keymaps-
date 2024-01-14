@@ -32,13 +32,31 @@
     "command": "workbench.action.terminal.new",
     "when": "editorTextFocus && !editorHasSelection && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetVisible"
   },
-  //new vs code 
+  {
+    // Focus the terminal when the terminal is not focused
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    // Focus the active editor group (text editor) when the terminal is focused
+    "key": "ctrl+;",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    // Maximize/minimize terminal panel and focus on terminal when terminal is not focused
+    // (requires "multi-command" extension and "multiCommand.toggleMaximizedPanelAndFocusTerminal" command defined in settings.json)
+    "key": "ctrl+shift+;",
+    "command": "multiCommand.toggleMaximizedPanelAndFocusTerminal",
+    "when": "!terminalFocus || terminalFocus"
+  },
+  //new vs code
   {
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
-  // to close vs code 
+  // to close vs code
   {
     "key": "ctrl+shift+w",
     "command": "workbench.action.terminal.kill",
@@ -113,7 +131,7 @@
     "command": "workbench.action.quickOpen",
     "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
   },
-    //
+  //
   // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
   //
 
@@ -140,5 +158,5 @@
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
-  },
+  }
 ]
