@@ -32,22 +32,6 @@
     "command": "workbench.action.terminal.new",
     "when": "editorTextFocus && !editorHasSelection && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetVisible"
   },
-
-  // To focus on terminal and remove focus
-  {
-    "key": "ctrl+shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.togglePanel"
-  },
   //new vs code 
   {
     "key": "ctrl+shift+n",
