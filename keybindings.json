@@ -33,23 +33,11 @@
     "when": "editorTextFocus && !editorHasSelection && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetVisible"
   },
   {
-    // Focus the terminal when the terminal is not focused
     "key": "ctrl+;",
-    "command": "workbench.action.terminal.focus"
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   },
-  {
-    // Focus the active editor group (text editor) when the terminal is focused
-    "key": "ctrl+;",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    // Maximize/minimize terminal panel and focus on terminal when terminal is not focused
-    // (requires "multi-command" extension and "multiCommand.toggleMaximizedPanelAndFocusTerminal" command defined in settings.json)
-    "key": "ctrl+shift+;",
-    "command": "multiCommand.toggleMaximizedPanelAndFocusTerminal",
-    "when": "!terminalFocus || terminalFocus"
-  },
+
   //new vs code
   {
     "key": "ctrl+shift+n",
@@ -101,36 +89,11 @@
 
   //to close the tree
   {
-    "key": "space x",
-    "command": "-workbench.files.action.focusFilesExplorer",
-    "when": "explorerViewletVisible && !inputFocus"
-  },
-  {
-    "key": "space x",
-    "command": "workbench.files.action.focusFilesExplorer",
-    "when": "!explorerViewletVisible && !inputFocus"
-  },
-  {
-    "key": "space x",
-    "command": "workbench.action.previousEditor",
-    "when": "explorerViewletVisible && !inputFocus"
-  },
-  {
     "key": "d",
     "command": "deleteFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
-  //To Open quick fix
-  {
-    "key": "space f",
-    "command": "workbench.action.problems.focus",
-    "when": "editorLangId == 'plaintext' && !inDebugRepl && editorTextFocus && vim.active && vim.mode == 'Normal'"
-  },
-  {
-    "key": "spcae space",
-    "command": "workbench.action.quickOpen",
-    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
-  },
+
   //
   // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
   //
@@ -158,5 +121,26 @@
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "filesExplorer.findInFolder",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
   }
 ]
+
